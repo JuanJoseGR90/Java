@@ -1,10 +1,11 @@
 public class EjemploValidacion {
 
     public static void main(String[] args) {
-
+//        VARIABLES
         String nombre = "";
         boolean validacion;
 
+//        PRUEBAS
         validacion = nombre.isEmpty();
 
         System.out.println("\nEstá vacío? ".concat(String.valueOf(validacion)));
