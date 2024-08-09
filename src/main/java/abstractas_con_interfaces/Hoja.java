@@ -4,6 +4,8 @@ abstract public class Hoja {
 
     protected String contenido;
 
+    public Hoja () {}
+
     public Hoja (String contenido) {
         this.contenido = contenido;
     }

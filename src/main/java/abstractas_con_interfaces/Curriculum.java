@@ -3,7 +3,7 @@ package abstractas_con_interfaces;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Curriculum extends Hoja {
+public class Curriculum extends Hoja implements Imprimible {
 
     private String persona, carrera;
     private List<String> experiencias;
@@ -20,14 +20,15 @@ public class Curriculum extends Hoja {
         return this;
     }
 
-    public String imprimir () {
+    public String imprimir() {
+        System.out.println("\n=== CURRICULUM ===");
         StringBuilder sb = new StringBuilder("Nombre: ");
         sb.append(this.persona).append("\n")
                 .append("Resumen: ").append(this.contenido).append("\n")
                 .append("Profesión: ").append(this.carrera).append("\n")
-                .append("Experiencias: \n");
+                .append("Experiencias: ");
         for (String exp : experiencias) {
-            sb.append(" - ").append(exp).append("\n");
+            sb.append(" - ").append(exp);
         }
         return sb.toString();
     }
