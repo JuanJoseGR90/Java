@@ -1,15 +1,15 @@
 package abstractas_con_interfaces;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Libro implements Imprimible {
     private List<Imprimible> paginas;
-    public String autor, titulo;
-    public Genero genero;
+    private Persona autor;
+    private String titulo;
+    private Genero genero;
 
-    public Libro(String autor, String titulo, Genero genero) {
+    public Libro(Persona autor, String titulo, Genero genero) {
         this.autor = autor;
         this.titulo = titulo;
         this.genero = genero;
@@ -25,7 +25,7 @@ public class Libro implements Imprimible {
         System.out.println("\n=== LIBRO ===");
         StringBuilder sb = new StringBuilder("Título: ");
         sb.append(titulo).append('\n')
-                .append("Autor: ").append(this.autor).append('\n')
+                .append("Autor: ").append(this.autor.getNombre()).append('\n')
                 .append("Genero: ").append(this.genero).append('\n');
         for (Imprimible pagina : paginas) {
             sb.append(pagina.imprimir()).append("\n");

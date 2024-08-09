@@ -10,17 +10,24 @@ public class EjemploImprenta {
 
     public static void main(String[] args) {
 
-        Curriculum cv = new Curriculum("Jhon Doe", "DAM", "Resumen laboral...");
-        cv.addExperiencia("Java");
-        cv.addExperiencia("Scala");
-        cv.addExperiencia("Python");
-        cv.addExperiencia("PHP");
-        cv.addExperiencia("Go");
+        Curriculum cv = new Curriculum(new Persona("Jhon", "Doe"), "DAM", "Resumen laboral...");
+        cv.addExperiencia("Java")
+                .addExperiencia("Scala")
+                .addExperiencia("Python")
+                .addExperiencia("PHP")
+                .addExperiencia("Go");
 
-        Informe informe = new Informe("Martin Fowler", "James", "Estudios...");
+        Informe informe = new Informe(
+                new Persona("Martin", "Fowler"),
+                new Persona("James", "Watt"),
+                "Estudios...");
 
-        Libro libro = new Libro("H.P. Lovecraft", "En las montañas de locura", TERROR);
-        libro.addPagina(new Pagina("Capítulo 1"))
+        Libro libro = new Libro(
+                new Persona("H.P.", "Lovecraft"),
+                "En las montañas de locura",
+                TERROR);
+        libro.addPagina(
+                new Pagina("Capítulo 1"))
                 .addPagina(new Pagina("Capítulo 2"))
                 .addPagina(new Pagina("Capítulo 3"));
 
