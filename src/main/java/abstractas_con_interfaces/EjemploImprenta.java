@@ -1,4 +1,4 @@
-package abstractas;
+package abstractas_con_interfaces;
 
 public class EjemploImprenta {
 

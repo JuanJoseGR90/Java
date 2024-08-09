@@ -1,3 +1,5 @@
+package ejemplos_varios;
+
 public class EjemploInmutabilidad {
 
     //  Se pasa por valor de esta manera tanto si es un tipo primitivo, como si es un tipo Wrapper como Integer.

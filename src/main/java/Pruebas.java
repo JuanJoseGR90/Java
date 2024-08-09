@@ -1,6 +1,7 @@
+import ejemplos_varios.Persona;
 import herencia.Alumno;
 
-public class Practicas {
+public class Pruebas {
 
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package abstractas;
+package abstractas_con_interfaces;
 
 import java.util.ArrayList;
 import java.util.List;

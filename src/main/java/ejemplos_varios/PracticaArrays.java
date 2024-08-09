@@ -1,3 +1,5 @@
+package ejemplos_varios;
+
 public class PracticaArrays {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package ejemplos_varios;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

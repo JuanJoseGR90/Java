@@ -1,3 +1,5 @@
+package ejemplos_varios;
+
 public class PracticaObjetos {
 
     private String nombreObj;
