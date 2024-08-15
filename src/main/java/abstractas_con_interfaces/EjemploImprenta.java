@@ -10,7 +10,11 @@ public class EjemploImprenta {
 
     public static void main(String[] args) {
 
-        Curriculum cv = new Curriculum(new Persona("Jhon", "Doe"), "DAM", "Resumen laboral...");
+        Curriculum cv = new Curriculum(
+                new Persona("Jhon", "Doe"),
+                "DAM",
+                "Resumen laboral...");
+
         cv.addExperiencia("Java")
                 .addExperiencia("Scala")
                 .addExperiencia("Python")
@@ -26,6 +30,7 @@ public class EjemploImprenta {
                 new Persona("H.P.", "Lovecraft"),
                 "En las montañas de locura",
                 TERROR);
+
         libro.addPagina(
                 new Pagina("Capítulo 1"))
                 .addPagina(new Pagina("Capítulo 2"))
