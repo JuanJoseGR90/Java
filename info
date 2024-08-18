@@ -31,3 +31,8 @@
     Método equals es equivalente al ==, que compara la referencia del objeto. Se puede modificar sobrescribiéndolo.
 
     Orden de elementos de clase: contructores, getters y setters, métodos personalizados, métodos sobrescritos.
+
+    En métodos estáticos sólo se puede trabajar con atributos estaticos, valores estáticos o argumentos que se pasan
+    por el método.
+
+    Enum lleva implementado por defecto un toString, y se usar métodos como name y values sin tener que definirlos.
