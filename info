@@ -3,9 +3,7 @@
 
     La programación estructurada se basa en funciones que procesan datos.
 
-    La POO se basa en representaciones de objetos de la realidad; están formados por las carácterísticas de estos y que le
-    permiten representar su comportamiento mediante funciones que procesan los distintos parámetros que dicho objeto
-    requiere.
+    La POO se basa en representaciones de objetos de la realidad; están formados por las carácterísticas de estos y que le permiten representar su comportamiento mediante funciones que procesan los distintos parámetros que dicho objeto requiere.
 
 ======  PRINCIPIOS POO  ======
 
@@ -21,8 +19,7 @@
 
     Atributos de instancia.
 
-    Operador new crea la instancia guardando el objeto en la memoria, inicializándolo con el constructor de la clase y
-    asignando una referencia de memoria al nombre designado para el objeto.
+    Operador new crea la instancia guardando el objeto en la memoria, inicializándolo con el constructor de la clase y asignando una referencia de memoria al nombre designado para el objeto.
 
     Retornar datos es mejor que imprimirlos directamente desde un método.
 
@@ -32,12 +29,32 @@
 
     Orden de elementos de clase: contructores, getters y setters, métodos personalizados, métodos sobrescritos.
 
-    En métodos estáticos sólo se puede trabajar con atributos estaticos, valores estáticos o argumentos que se pasan
-    por el método.
+    En métodos estáticos sólo se puede trabajar con atributos estaticos, valores estáticos o argumentos que se pasan por el método.
 
     Enum lleva implementado por defecto un toString, y se usar métodos como name y values sin tener que definirlos.
 
 ======  CONSEJOS   ======
 
-    Si en un return me da un NullPointerException puedo aislarlo con un if para evitarlo. Si fuera en un String puedo
-    dividirlo y concatenarlo con +=, aislando la sección problemática dentro del if.
+    Si en un return me da un NullPointerException puedo aislarlo con un if para evitarlo. Si fuera en un String puedo dividirlo y concatenarlo con +=, aislando la sección problemática dentro del if. Ejemplo:
+
+        public String verDetalle() {
+
+            String detalle = "auto.id =" + this.getModelo();
+
+            if (this.getTipo != null) {
+
+                detalle += "auto.tipo = " + this.getTipo().getDescripcion();
+            }
+        }
+
+    Para evitar un nullPointerEx existe se aplica un patrón en el método similar a esto:
+
+        public Estanque getEstanque() {
+
+                if (estanque == null) {
+                    estanque = new Estanque();
+                }
+
+                return estanque;
+            }
+

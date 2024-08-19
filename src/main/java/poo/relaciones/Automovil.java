@@ -23,7 +23,6 @@ public class Automovil {
     private static int ultimoId;
 
     public Automovil() {
-
     }
 
     public Automovil(Fabricante fabricante, String modelo, Color color, Motor motor) {
@@ -79,6 +78,11 @@ public class Automovil {
     }
 
     public Estanque getEstanque() {
+
+        if (estanque == null) {
+            estanque = new Estanque();
+        }
+
         return estanque;
     }
 
@@ -181,14 +185,18 @@ public class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil \n id="  + id  +
-                "\n color=" + color +
-                "\n fabricante=" + fabricante +
-                "\n tipo=" + tipo +
-                "\n conductor=" + conductor +
-                "\n estanque=" + estanque +
-                "\n motor=" + motor +
-                "\n ruedas=" + rueda +
-                "\n modelo='" + modelo + '\'';
+        return "Automovil{" +
+                "id=" + id +
+                ", modelo='" + modelo + '\'' +
+                ", tipo=" + tipo +
+                ", tipos=" + Arrays.toString(tipos) +
+                ", motor=" + motor +
+                ", estanque=" + estanque +
+                ", conductor=" + conductor +
+                ", ruedas=" + Arrays.toString(ruedas) +
+                ", rueda=" + rueda +
+                ", fabricante=" + fabricante +
+                ", color=" + color +
+                '}';
     }
 }

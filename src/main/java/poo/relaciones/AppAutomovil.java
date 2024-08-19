@@ -9,20 +9,32 @@ public class AppAutomovil {
 
     public static void main(String[] args) {
 
-        Automovil auto = new Automovil(Fabricante.AUDI, "A4", Color.NEGRO, new Motor(3.0D, TipoMotor.GASOLINA), TipoAutomovil.COUPE, new Estanque(50), new Persona("Juan José", "G.R"), new Rueda("Michelin", 24, 50d));
+        Rueda[] ruedas = new Rueda[4];
+        ruedas[0] = new Rueda("Yokohama", 16, 7.5);
+        ruedas[1] = new Rueda("Yokohama", 16, 7.5);
+        ruedas[2] = new Rueda("Yokohama", 16, 7.5);
+        ruedas[3] = new Rueda("Yokohama", 16, 7.5);
 
-        Automovil auto2 = new Automovil(Fabricante.AUDI, "a4", Color.ROJO, new Motor(2.0d, TipoMotor.DIESEL));
+        Persona conductor = new Persona("Juan José", "G.R.");
+        Automovil mazda = new Automovil();
+        mazda.setFabricante(Fabricante.MAZDA);
+        mazda.setModelo("MX-5");
+        mazda.setMotor(new Motor(2.0d, TipoMotor.GASOLINA));
+        mazda.setEstanque(new Estanque(50));
+        mazda.setColor(Color.ROJO);
+        mazda.setTipo(TipoAutomovil.COUPE);
+        mazda.setConductor(conductor);
+        mazda.setRuedas(ruedas);
 
-        auto.encontrarTipo(auto.getTipo());
+        mazda.encontrarTipo(mazda.getTipo());
 
-        auto.detallesTipo();
+        mazda.detallesTipo();
 
-        System.out.println(auto.equals(auto2) + "\n");
+        //System.out.println(mazda.equals(auto2) + "\n");
 
-        System.out.println(auto.toString());
-        //System.out.println(auto2.toString());
+        System.out.println(mazda.toString());
 
-        System.out.println(auto2.detalle());
+
 
     }
 }
