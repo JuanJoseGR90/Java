@@ -1,5 +1,5 @@
-import herencia.Alumno;
-import herencia.Persona;
+import poo.herencia.Alumno;
+import poo.herencia.Persona;
 
 public class Run {
 
