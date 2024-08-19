@@ -11,16 +11,18 @@ public class AppAutomovil {
 
         Automovil auto = new Automovil(Fabricante.AUDI, "A4", Color.NEGRO, new Motor(3.0D, TipoMotor.GASOLINA), TipoAutomovil.COUPE, new Estanque(50), new Persona("Juan José", "G.R"), new Rueda("Michelin", 24, 50d));
 
-        Automovil auto2 = new Automovil();
+        Automovil auto2 = new Automovil(Fabricante.AUDI, "a4", Color.ROJO, new Motor(2.0d, TipoMotor.DIESEL));
 
         auto.encontrarTipo(auto.getTipo());
 
         auto.detallesTipo();
 
-        System.out.println(auto.equals(auto2));
+        System.out.println(auto.equals(auto2) + "\n");
 
         System.out.println(auto.toString());
         //System.out.println(auto2.toString());
+
+        System.out.println(auto2.detalle());
 
     }
 }

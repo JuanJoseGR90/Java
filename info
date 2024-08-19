@@ -36,3 +36,8 @@
     por el método.
 
     Enum lleva implementado por defecto un toString, y se usar métodos como name y values sin tener que definirlos.
+
+======  CONSEJOS   ======
+
+    Si en un return me da un NullPointerException puedo aislarlo con un if para evitarlo. Si fuera en un String puedo
+    dividirlo y concatenarlo con +=, aislando la sección problemática dentro del if.

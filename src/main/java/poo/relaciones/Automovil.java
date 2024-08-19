@@ -181,15 +181,14 @@ public class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil{ id="  + id  +
-                ", color=" + color +
-                ", fabricante=" + fabricante +
-                ", ruedas=" + Arrays.toString(ruedas) +
-                ", conductor=" + conductor +
-                ", estanque=" + estanque +
-                ", motor=" + motor +
-                ", tipo=" + tipo +
-                ", modelo='" + modelo + '\'' +
-                '}';
+        return "Automovil \n id="  + id  +
+                "\n color=" + color +
+                "\n fabricante=" + fabricante +
+                "\n tipo=" + tipo +
+                "\n conductor=" + conductor +
+                "\n estanque=" + estanque +
+                "\n motor=" + motor +
+                "\n ruedas=" + rueda +
+                "\n modelo='" + modelo + '\'';
     }
 }

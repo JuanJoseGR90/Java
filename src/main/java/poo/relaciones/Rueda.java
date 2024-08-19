@@ -23,4 +23,13 @@ public class Rueda {
     public double getDiametro() {
         return diametro;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "fabricante='" + fabricante + '\'' +
+                ", llanta=" + llanta +
+                ", diametro=" + diametro +
+                '}';
+    }
 }
