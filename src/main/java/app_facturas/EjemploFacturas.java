@@ -1,9 +1,6 @@
 package app_facturas;
 
-import app_facturas.models.Cliente;
-import app_facturas.models.Factura;
-import app_facturas.models.ItemFactura;
-import app_facturas.models.Producto;
+import app_facturas.models.*;
 
 import java.util.Scanner;
 
@@ -22,31 +19,24 @@ public class EjemploFacturas {
         Factura factura = new Factura(cliente, desc);
 
         Producto producto;
-        String nombre;
-        float precio;
-        int cantidad;
 
         System.out.println();
 
-        for (int i = 0; i<5; i++) {
+        for (int i = 0; i<2; i++) {
             producto = new Producto();
 
-            System.out.print("Ingrese Nº producto " + producto.getCodigo() + ": ");
-            nombre = sc.next();
-            producto.setNombre(nombre);
+            System.out.print("Ingrese código producto " + producto.getCodigo() + ": ");
+            producto.setNombre(sc.nextLine());
 
             System.out.print("Ingrese Precio: ");
-            precio = sc.nextFloat();
-            producto.setPrecio(precio);
+            producto.setPrecio(sc.nextFloat());
 
             System.out.print("Ingrese Cantidad: ");
-            cantidad = sc.nextInt();
-
-            ItemFactura item = new ItemFactura(cantidad, producto);
-            factura.addItemsFactura(item);
+            factura.addItemsFactura(new ItemFactura(sc.nextInt(), producto));
 
             System.out.println();
+            sc.nextLine();
         }
-        System.out.println(factura.generarDetalle());
+        System.out.println(factura);
     }
 }
