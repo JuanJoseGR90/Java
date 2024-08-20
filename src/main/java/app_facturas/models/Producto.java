@@ -1,4 +1,4 @@
-package appFacturas.models;
+package app_facturas.models;
 
 public class Producto {
 
