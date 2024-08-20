@@ -101,7 +101,7 @@ public class Factura {
                 continue;
             }
 
-            sb.append(item).append("\n");
+            sb.append(item.toString()).append("\n");
         }
 
         sb.append("\nTotal factura: ").append(calcularTotal());
