@@ -3,7 +3,6 @@ package poo.tipos.genericos;
 import app_facturas.models.Cliente;
 import app_facturas.models.ClientePremiun;
 
-import javax.sound.sampled.Clip;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,11 +23,13 @@ public class EjemploGenericos {
 
 //        Ahora la lista guarda y devuelve tipos cliente; ya no es necesario hacer el casting
 
-        List <Cliente> clientes = new ArrayList();
+        List <Cliente> clientes = new ArrayList<>();
 
         clientes.add(new Cliente("Juan José", "G.R."));
 
         Cliente juanjose = clientes.iterator().next();
+
+        System.out.println(juanjose);
 
         Cliente[] clientes1 = {
                 new Cliente("Hellrider", "Ozone"),
@@ -49,11 +50,16 @@ public class EjemploGenericos {
         List<Cliente> listaClientes2 = fromArrayToList(clientes1);
         List<Integer> listaEnteros = fromArrayToList(enteros);
         List<ClientePremiun> listaClientesPremiun = fromArrayToList(listaClientePremiun);
+        List<? extends Cliente> listaClientesPremiun2 = fromArrayToList(listaClientePremiun);
 
         listaClientes.forEach(System.out::println);
         listaClientes2.forEach(System.out::println);
         listaEnteros.forEach(System.out::println);
         listaClientesPremiun.forEach(System.out::println);
+        listaClientesPremiun2.forEach(System.out::println);
+
+        imprimirClientes(clientes);
+        imprimirClientes(listaClientesPremiun);
     }
 
 //      Quiero convertir cualquier tipo de dato, pero la siguiente forma sólo me permite convertir un array de Clientes.
@@ -63,7 +69,9 @@ public class EjemploGenericos {
         return Arrays.asList(clientes);
     */
 
-//      Ahora sí es genérico. Agrego <T>, sustituyo tipo Cliente por T en el List, y que recibe un array T[] por parámetro.
+//      Ahora sí es genérico. Agrego <T> (lo que devuelve la función), sustituyo tipo Cliente por T en el List
+//      (lo que recibe la lista), y que recibe un array T[] por parámetro.
+
 //      Ahora puede recibir y devolver cualquier tipo de objeto.
 
     public static <T> List<T> fromArrayToList(T[] t) {
@@ -95,5 +103,15 @@ public class EjemploGenericos {
         System.out.println();
 
         return Arrays.asList(t);
+    }
+
+//    Así se hace para pasar cualquier clase que derive de cliente; no se puede si no es de esta forma.
+//    Si solo tengo Cliente, en vez de ? extends Cliente, sólo acepta listaCliente, pero no listaClientePremiun.
+//    Lo que sucede es que no se le está pasando un objeto tipo ClientePremiun, sino un List. El List no deriva de
+//    Cliente, sólo indica que recibe el tipos Cliente, nada más. Está restringido a recibir tipos Cliente, pero si
+//    indico que recibe Clientes y sus derivados con ? extends Cliente, ahora sí puede recibir una listaClientesPremiun.
+
+    public static void imprimirClientes(List<? extends Cliente> clientes) {
+        clientes.forEach(System.out::println);
     }
 }
