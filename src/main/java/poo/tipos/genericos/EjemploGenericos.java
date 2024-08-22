@@ -114,4 +114,25 @@ public class EjemploGenericos {
     public static void imprimirClientes(List<? extends Cliente> clientes) {
         clientes.forEach(System.out::println);
     }
+
+    /*
+        <T extends Comparable<T>>: De esta forma estamos parametrizando que T puede ser un Objeto de cualquier tipo.
+        T: será el tipo de datos que devolveremos.
+        (T a, T b, T c): lo que nos llegará como parámetro de entrada.
+    */
+
+    public static <T extends Comparable<T>> T maximo(T a, T b, T c) {
+
+        T max = a;
+
+        if (b.compareTo(a) > 0) {
+            max = b;
+        }
+
+        if (c.compareTo(a) > 0) {
+            max = c;
+        }
+
+        return max;
+    }
 }
