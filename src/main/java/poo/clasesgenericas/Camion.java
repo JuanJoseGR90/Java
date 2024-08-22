@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Camion implements Iterable {
+public class Camion<T> implements Iterable<T> {
 
-    private List objetos;
+    private List<T> objetos;
     private int max;
 
     public Camion(int max) {
         this.max = max;
-        this.objetos = new ArrayList();
+        this.objetos = new ArrayList<>();
     }
 
-    public void addObjeto(Object objeto) {
+    public void addObjeto(T objeto) {
         if (objetos.size() <= max) {
             this.objetos.add(objeto);
         } else {
